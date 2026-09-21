@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Three Types of CSS</title>
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Internal CSS -->
+    <style>
+        h1 {
+            color: blue;
+            text-align: center;
+        }
+
+        .internal {
+            background-color: lightyellow;
+            padding: 15px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Inline CSS -->
+    <p style="color: red; font-size: 20px;">
+        This paragraph uses Inline CSS.
+    </p>
+
+    <h1>Internal CSS</h1>
+
+    <p class="internal">
+        This paragraph uses Internal CSS.
+    </p>
+
+    <div class="external">
+        This box uses External CSS.
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Skeleton Loading</title>
+<style>
+.card{width:350px;padding:20px;border:1px solid #ddd}
+.skeleton{background:linear-gradient(90deg,#eee,#ddd,#eee);
+background-size:200% 100%;animation:loading 1.5s infinite;
+border-radius:5px}
+.image{height:150px}
+.line{height:15px;margin:12px 0}
+.short{width:60%}
+@keyframes loading{
+to{background-position:-200% 0}
+}
+</style>
+</head>
+<body>
+
+<div class="card">
+<div class="skeleton image"></div>
+<div class="skeleton line"></div>
+<div class="skeleton line short"></div>
+<div class="skeleton line"></div>
+</div>
+
+</body>
+</html>

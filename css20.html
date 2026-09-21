@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CSS Functions</title>
+
+    <style>
+        .calc-box {
+            width: calc(100% - 40px);
+            background: lightblue;
+            padding: 20px;
+            margin: 20px;
+        }
+
+        .min-box {
+            width: min(80%, 500px);
+            background: lightgreen;
+            padding: 20px;
+            margin: 20px auto;
+        }
+
+        .max-box {
+            width: max(300px, 50%);
+            background: lightyellow;
+            padding: 20px;
+            margin: 20px;
+        }
+
+        h1 {
+            font-size: clamp(24px, 5vw, 60px);
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>CSS Functions</h1>
+
+    <div class="calc-box">calc()</div>
+
+    <div class="min-box">min()</div>
+
+    <div class="max-box">max()</div>
+
+</body>
+</html>

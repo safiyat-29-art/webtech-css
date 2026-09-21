@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Object Fit and Position</title>
+
+    <style>
+        .image {
+            width: 300px;
+            height: 200px;
+            border: 3px solid blue;
+        }
+
+        .cover {
+            object-fit: cover;
+            object-position: center;
+        }
+
+        .contain {
+            object-fit: contain;
+            object-position: top right;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Object Fit: Cover</h2>
+
+    <img
+        src="image.jpg"
+        class="image cover"
+        alt="Sample">
+
+    <h2>Object Fit: Contain</h2>
+
+    <img
+        src="image.jpg"
+        class="image contain"
+        alt="Sample">
+
+</body>
+</html>

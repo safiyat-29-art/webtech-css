@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CSS 3D Transform</title>
+
+    <style>
+        .scene {
+            width: 300px;
+            height: 200px;
+            margin: 80px;
+            perspective: 600px;
+        }
+
+        .box {
+            width: 200px;
+            height: 150px;
+            background: linear-gradient(45deg, blue, purple);
+            color: white;
+            padding: 50px 20px;
+            text-align: center;
+
+            transform: rotateY(35deg) rotateX(15deg);
+            transition: transform 1s;
+        }
+
+        .box:hover {
+            transform:
+                rotateY(180deg)
+                rotateX(20deg)
+                translateZ(50px);
+        }
+    </style>
+</head>
+<body>
+
+    <h1>CSS 3D Transformation</h1>
+
+    <div class="scene">
+        <div class="box">
+            Hover Me
+        </div>
+    </div>
+
+</body>
+</html>

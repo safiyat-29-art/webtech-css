@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real-Time Analytics</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="sidebar">
+    <h2>Analytics</h2>
+    <a href="customer.html">Customer</a>
+    <a href="product.html">Product</a>
+    <a href="marketing.html">Marketing</a>
+    <a href="financial.html">Financial</a>
+    <a href="realtime.html">Real-Time</a>
+</div>
+
+<div class="main">
+    <h1>Real-Time Analytics</h1>
+    <p>Monitor live activity and system performance.</p>
+
+    <div class="cards">
+        <div class="card">
+            <h3>Live Users</h3>
+            <h2 id="users">1,248</h2>
+            <span>● Live</span>
+        </div>
+
+        <div class="card">
+            <h3>Transactions</h3>
+            <h2 id="transactions">582</h2>
+            <span>Today</span>
+        </div>
+
+        <div class="card">
+            <h3>Server Load</h3>
+            <h2>42%</h2>
+            <span>Normal</span>
+        </div>
+
+        <div class="card">
+            <h3>Response Time</h3>
+            <h2>124 ms</h2>
+            <span>Stable</span>
+        </div>
+    </div>
+
+    <div class="chart">
+        <h2>Live Activity</h2>
+
+        <div class="bars">
+            <div style="height:45%">1</div>
+            <div style="height:65%">2</div>
+            <div style="height:50%">3</div>
+            <div style="height:80%">4</div>
+            <div style="height:70%">5</div>
+            <div style="height:90%">6</div>
+            <div style="height:75%">7</div>
+        </div>
+    </div>
+
+    <div class="table-box">
+        <h2>Live Events</h2>
+
+        <table>
+            <tr>
+                <th>Time</th>
+                <th>Event</th>
+                <th>User</th>
+                <th>Status</th>
+            </tr>
+
+            <tr>
+                <td>13:40</td>
+                <td>Purchase</td>
+                <td>User #1024</td>
+                <td>Success</td>
+            </tr>
+
+            <tr>
+                <td>13:41</td>
+                <td>Login</td>
+                <td>User #2841</td>
+                <td>Success</td>
+            </tr>
+
+            <tr>
+                <td>13:42</td>
+                <td>Payment</td>
+                <td>User #3892</td>
+                <td>Processing</td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<script>
+    setInterval(function () {
+        let users = Math.floor(Math.random() * 500) + 1000;
+        let transactions = Math.floor(Math.random() * 200) + 500;
+
+        document.getElementById("users").innerText =
+            users.toLocaleString();
+
+        document.getElementById("transactions").innerText =
+            transactions.toLocaleString();
+    }, 2000);
+</script>
+
+</body>
+</html>

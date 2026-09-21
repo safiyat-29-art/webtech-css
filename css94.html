@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sales Analytics</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background: #f5f7fb;
+            padding: 30px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px #ddd;
+        }
+
+        .number {
+            font-size: 30px;
+            font-weight: bold;
+        }
+
+        .funnel div {
+            margin: 10px auto;
+            padding: 15px;
+            text-align: center;
+            color: white;
+            background: #4f46e5;
+        }
+
+        .funnel div:nth-child(1) { width: 90%; }
+        .funnel div:nth-child(2) { width: 70%; }
+        .funnel div:nth-child(3) { width: 50%; }
+        .funnel div:nth-child(4) { width: 30%; }
+    </style>
+</head>
+
+<body>
+
+<h1>Sales Analytics Dashboard</h1>
+
+<div class="grid">
+    <div class="card">
+        <h3>Total Sales</h3>
+        <div class="number">$185K</div>
+    </div>
+
+    <div class="card">
+        <h3>Deals Closed</h3>
+        <div class="number">428</div>
+    </div>
+
+    <div class="card">
+        <h3>Average Deal</h3>
+        <div class="number">$4,320</div>
+    </div>
+</div>
+
+<div class="card">
+    <h2>Sales Funnel</h2>
+
+    <div class="funnel">
+        <div>Visitors</div>
+        <div>Leads</div>
+        <div>Opportunities</div>
+        <div>Customers</div>
+    </div>
+</div>
+
+</body>
+</html>

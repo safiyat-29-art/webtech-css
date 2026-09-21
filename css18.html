@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CSS Variables</title>
+
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #dbeafe;
+            --spacing: 20px;
+            --radius: 10px;
+        }
+
+        body {
+            background-color: var(--secondary-color);
+        }
+
+        h1 {
+            color: var(--primary-color);
+        }
+
+        .card {
+            background: white;
+            padding: var(--spacing);
+            margin: var(--spacing);
+            border-radius: var(--radius);
+            border: 2px solid var(--primary-color);
+        }
+
+        button {
+            background: var(--primary-color);
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: var(--radius);
+        }
+    </style>
+</head>
+<body>
+
+    <h1>CSS Variables</h1>
+
+    <div class="card">
+        <p>Variables make CSS values reusable.</p>
+        <button>Click Me</button>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Mega Menu</title>
+<style>
+nav{background:#111827;padding:20px}
+nav>a{color:white;text-decoration:none}
+.mega{display:none;position:absolute;left:0;right:0;background:white;
+padding:30px;box-shadow:0 5px 20px #aaa}
+.container{display:flex;gap:80px}
+.dropdown:hover .mega{display:block}
+.col h3{color:#4f46e5}
+.col a{display:block;padding:8px;color:#333}
+</style>
+</head>
+<body>
+
+<nav>
+<div class="dropdown">
+<a href="#">Products ▼</a>
+<div class="mega">
+<div class="container">
+<div class="col">
+<h3>Platform</h3>
+<a>Analytics</a>
+<a>Automation</a>
+<a>Integrations</a>
+</div>
+<div class="col">
+<h3>Solutions</h3>
+<a>Startups</a>
+<a>Enterprise</a>
+<a>Agencies</a>
+</div>
+<div class="col">
+<h3>Resources</h3>
+<a>Documentation</a>
+<a>Blog</a>
+<a>Community</a>
+</div>
+</div>
+</div>
+</div>
+</nav>
+
+</body>
+</html>

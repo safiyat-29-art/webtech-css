@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Toast</title>
+<style>
+button{padding:12px}
+.toast{position:fixed;right:20px;bottom:20px;
+background:#111827;color:white;padding:18px 25px;border-radius:8px;
+display:none}
+.show{display:block}
+</style>
+</head>
+<body>
+
+<button onclick="showToast()">Show Notification</button>
+
+<div class="toast" id="toast">
+✓ Changes saved successfully!
+</div>
+
+<script>
+function showToast(){
+let t=document.getElementById("toast");
+t.classList.add("show");
+setTimeout(()=>t.classList.remove("show"),3000);
+}
+</script>
+
+</body>
+</html>

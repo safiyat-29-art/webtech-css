@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CSS Spacing Utilities</title>
+
+    <style>
+        .m-1 {
+            margin: 10px;
+        }
+
+        .m-2 {
+            margin: 30px;
+        }
+
+        .p-1 {
+            padding: 10px;
+        }
+
+        .p-2 {
+            padding: 30px;
+        }
+
+        .box {
+            background: lightblue;
+            border: 2px solid blue;
+        }
+
+        .gap {
+            display: flex;
+            gap: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="box m-1 p-1">
+        Small Margin and Padding
+    </div>
+
+    <div class="box m-2 p-2">
+        Large Margin and Padding
+    </div>
+
+    <div class="gap">
+        <div class="box p-1">Box 1</div>
+        <div class="box p-1">Box 2</div>
+        <div class="box p-1">Box 3</div>
+    </div>
+
+</body>
+</html>

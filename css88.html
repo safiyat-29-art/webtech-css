@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f1f5f9;
+        }
+
+        .container {
+            width: 450px;
+            max-width: 90%;
+            margin: 50px auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px #ccc;
+        }
+
+        h1 {
+            text-align: center;
+            color: #2563eb;
+        }
+
+        label {
+            display: block;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+
+        input {
+            width: 100%;
+            padding: 11px;
+            margin-top: 5px;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+        }
+
+        input.valid {
+            border-color: green;
+        }
+
+        input.invalid {
+            border-color: red;
+        }
+
+        .error {
+            color: red;
+            font-size: 13px;
+            margin-top: 5px;
+            display: block;
+        }
+
+        button {
+            width: 100%;
+            margin-top: 20px;
+            padding: 12px;
+            border: none;
+            border-radius: 5px;
+            background: #2563eb;
+            color: white;
+            cursor: pointer;
+        }
+
+        .success {
+            color: green;
+            text-align: center;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Form Validation</h1>
+
+    <form id="myForm" novalidate>
+
+        <label for="name">Name</label>
+        <input type="text" id="name">
+        <span class="error" id="nameError"></span>
+
+        <label for="email">Email</label>
+        <input type="email" id="email">
+        <span class="error" id="emailError"></span>
+
+        <label for="password">Password</label>
+        <input type="password" id="password">
+        <span class="error" id="passwordError"></span>
+
+        <label for="confirmPassword">
+            Confirm Password
+        </label>
+
+        <input type="password" id="confirmPassword">
+        <span class="error" id="confirmError"></span>
+
+        <button type="submit">
+            Submit
+        </button>
+
+        <p id="successMessage" class="success"></p>
+
+    </form>
+
+</div>
+
+<script>
+    const form = document.getElementById("myForm");
+
+    form.addEventListener("submit", function(event) {
+
+        event.preventDefault();
+
+        let valid = true;
+
+        const name =
+            document.getElementById("name");
+
+        const email =
+            document.getElementById("email");
+
+        const password =
+            document.getElementById("password");
+
+        const confirmPassword =
+            document.getElementById("confirmPassword");
+
+        // Clear previous errors
+        document.querySelectorAll(".error")
+            .forEach(error => error.textContent = "");
+
+        document.querySelectorAll("input")
+            .forEach(input => {
+                input.classList.remove("valid", "invalid");
+            });
+
+        document.getElementById("successMessage")
+            .textContent = "";
+
+        // Name validation
+        if (name.value.trim() === "") {
+
+            document.getElementById("nameError")
+                .textContent = "Name is required.";
+
+            name.classList.add("invalid");
+            valid = false;
+
+        } else {
+            name.classList.add("valid");
+        }
+
+        // Email validation
+        const emailPattern =
+            /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+
+        if (!emailPattern.test(email.value)) {
+
+            document.getElementById("emailError")
+                .textContent = "Enter a valid email address.";
+
+            email.classList.add("invalid");
+            valid = false;
+
+        } else {
+            email.classList.add("valid");
+        }
+
+        // Password validation
+        if (password.value.length < 6) {
+
+            document.getElementById("passwordError")
+                .textContent =
+                "Password must contain at least 6 characters.";
+
+            password.classList.add("invalid");
+            valid = false;
+
+        } else {
+            password.classList.add("valid");
+        }
+
+        // Confirm password
+        if (confirmPassword.value !== password.value ||
+            confirmPassword.value === "") {
+
+            document.getElementById("confirmError")
+                .textContent =
+                "Passwords do not match.";
+
+            confirmPassword.classList.add("invalid");
+            valid = false;
+
+        } else {
+            confirmPassword.classList.add("valid");
+        }
+
+        // Successful validation
+        if (valid) {
+
+            document.getElementById("successMessage")
+                .textContent =
+                "✓ Form submitted successfully!";
+        }
+    });
+</script>
+
+</body>
+</html>

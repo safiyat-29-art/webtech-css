@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CSS Display</title>
+
+    <style>
+        .block {
+            display: block;
+            background: lightblue;
+            padding: 10px;
+        }
+
+        .inline {
+            display: inline;
+            background: yellow;
+        }
+
+        .inline-block {
+            display: inline-block;
+            background: lightgreen;
+            padding: 20px;
+        }
+
+        .flex {
+            display: flex;
+            gap: 10px;
+        }
+
+        .flex div {
+            background: orange;
+            padding: 20px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+
+        .grid div {
+            background: pink;
+            padding: 20px;
+        }
+
+        .none {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Block</h2>
+    <div class="block">Block Element</div>
+
+    <h2>Inline</h2>
+    <span class="inline">Inline Element</span>
+
+    <h2>Inline Block</h2>
+    <span class="inline-block">Inline Block</span>
+
+    <h2>Flex</h2>
+    <div class="flex">
+        <div>A</div>
+        <div>B</div>
+        <div>C</div>
+    </div>
+
+    <h2>Grid</h2>
+    <div class="grid">
+        <div>A</div>
+        <div>B</div>
+        <div>C</div>
+        <div>D</div>
+    </div>
+
+    <p class="none">This is hidden using display:none.</p>
+
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CSS Overflow</title>
+
+    <style>
+        .box {
+            width: 300px;
+            height: 120px;
+            border: 3px solid blue;
+            margin: 20px;
+            padding: 10px;
+        }
+
+        .hidden {
+            overflow: hidden;
+        }
+
+        .scroll {
+            overflow: scroll;
+        }
+
+        .x-y {
+            overflow-x: auto;
+            overflow-y: scroll;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="box hidden">
+        This content demonstrates overflow hidden.
+        Extra content is clipped when it exceeds the box.
+    </div>
+
+    <div class="box scroll">
+        This content demonstrates scroll overflow.
+        More content creates scrollbars inside the box.
+        More content More content More content.
+    </div>
+
+    <div class="box x-y">
+        This box demonstrates separate overflow-x
+        and overflow-y properties.
+    </div>
+
+</body>
+</html>

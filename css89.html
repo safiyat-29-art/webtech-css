@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SaaS Dashboard</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial;
+            background: #f4f6fb;
+        }
+
+        .sidebar {
+            position: fixed;
+            width: 220px;
+            height: 100%;
+            background: #172033;
+            color: white;
+            padding: 20px;
+        }
+
+        .sidebar a {
+            display: block;
+            color: white;
+            padding: 12px;
+            text-decoration: none;
+        }
+
+        .sidebar a:hover {
+            background: #635bff;
+        }
+
+        .main {
+            margin-left: 260px;
+            padding: 30px;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 3px 10px #ddd;
+        }
+
+        .number {
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .green {
+            color: green;
+        }
+
+        @media(max-width:800px) {
+            .sidebar {
+                position: static;
+                width: auto;
+                height: auto;
+            }
+
+            .main {
+                margin-left: 0;
+            }
+
+            .cards {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="sidebar">
+    <h2>Cloudly</h2>
+    <a href="#">Dashboard</a>
+    <a href="#">Analytics</a>
+    <a href="#">Customers</a>
+    <a href="#">Products</a>
+    <a href="#">Settings</a>
+</div>
+
+<div class="main">
+    <h1>SaaS Dashboard</h1>
+    <p>Welcome back, John!</p>
+
+    <div class="cards">
+        <div class="card">
+            <h3>Revenue</h3>
+            <div class="number">$84,500</div>
+            <p class="green">↑ 14.5%</p>
+        </div>
+
+        <div class="card">
+            <h3>Customers</h3>
+            <div class="number">8,420</div>
+            <p class="green">↑ 8.2%</p>
+        </div>
+
+        <div class="card">
+            <h3>Active Users</h3>
+            <div class="number">5,280</div>
+            <p class="green">↑ 12%</p>
+        </div>
+
+        <div class="card">
+            <h3>Conversion</h3>
+            <div class="number">6.8%</div>
+            <p class="green">↑ 2.1%</p>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

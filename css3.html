@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Combinator Selectors</title>
+
+    <style>
+        /* Descendant */
+        .container p {
+            color: blue;
+        }
+
+        /* Child */
+        .container > p {
+            background-color: lightyellow;
+        }
+
+        /* Adjacent sibling */
+        h2 + p {
+            color: red;
+        }
+
+        /* General sibling */
+        h2 ~ p {
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+
+        <h2>CSS Combinators</h2>
+
+        <p>Direct child paragraph.</p>
+
+        <div>
+            <p>Descendant paragraph.</p>
+        </div>
+
+        <p>Another sibling paragraph.</p>
+
+    </div>
+
+</body>
+</html>

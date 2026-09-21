@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CSS Cascade</title>
+
+    <style>
+        body {
+            color: blue;
+            font-family: Arial;
+        }
+
+        p {
+            color: green;
+        }
+
+        .text {
+            color: orange;
+        }
+
+        #special {
+            color: red;
+        }
+
+        p {
+            color: purple;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Inheritance and Specificity</h1>
+
+    <p>
+        This paragraph demonstrates the cascade.
+    </p>
+
+    <p class="text">
+        Class selector has higher specificity than
+        the element selector.
+    </p>
+
+    <p id="special" class="text">
+        ID selector has higher specificity than class.
+    </p>
+
+</body>
+</html>

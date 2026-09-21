@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multi-Step Form</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #eef2ff;
+        }
+
+        .container {
+            width: 500px;
+            max-width: 90%;
+            margin: 50px auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px #bbb;
+        }
+
+        h1 {
+            text-align: center;
+            color: #4f46e5;
+        }
+
+        .step {
+            display: none;
+        }
+
+        .step.active {
+            display: block;
+        }
+
+        .progress {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 30px;
+        }
+
+        .circle {
+            width: 35px;
+            height: 35px;
+            background: #ddd;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .circle.active {
+            background: #4f46e5;
+            color: white;
+        }
+
+        label {
+            display: block;
+            margin-top: 12px;
+            font-weight: bold;
+        }
+
+        input {
+            width: 100%;
+            padding: 11px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .buttons {
+            margin-top: 25px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .next {
+            background: #4f46e5;
+            color: white;
+        }
+
+        .previous {
+            background: #ddd;
+        }
+
+        .success {
+            text-align: center;
+            color: green;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Registration</h1>
+
+    <div class="progress">
+        <div class="circle active" id="circle1">1</div>
+        <div class="circle" id="circle2">2</div>
+        <div class="circle" id="circle3">3</div>
+    </div>
+
+    <form id="multiForm">
+
+        <!-- Step 1 -->
+        <div class="step active">
+
+            <h2>Personal Details</h2>
+
+            <label>Name</label>
+            <input type="text" id="name"
+                   placeholder="Enter your name">
+
+            <label>Age</label>
+            <input type="number" id="age"
+                   placeholder="Enter your age">
+
+            <div class="buttons">
+                <span></span>
+                <button type="button"
+                        class="next"
+                        onclick="nextStep()">
+                    Next
+                </button>
+            </div>
+
+        </div>
+
+        <!-- Step 2 -->
+        <div class="step">
+
+            <h2>Contact Details</h2>
+
+            <label>Email</label>
+            <input type="email" id="email"
+                   placeholder="Enter your email">
+
+            <label>Phone</label>
+            <input type="tel"
+                   placeholder="Enter phone number">
+
+            <div class="buttons">
+                <button type="button"
+                        class="previous"
+                        onclick="previousStep()">
+                    Previous
+                </button>
+
+                <button type="button"
+                        class="next"
+                        onclick="nextStep()">
+                    Next
+                </button>
+            </div>
+
+        </div>
+
+        <!-- Step 3 -->
+        <div class="step">
+
+            <h2>Account Details</h2>
+
+            <label>Username</label>
+            <input type="text"
+                   placeholder="Choose username">
+
+            <label>Password</label>
+            <input type="password"
+                   placeholder="Choose password">
+
+            <div class="buttons">
+
+                <button type="button"
+                        class="previous"
+                        onclick="previousStep()">
+                    Previous
+                </button>
+
+                <button type="submit"
+                        class="next">
+                    Submit
+                </button>
+
+            </div>
+
+        </div>
+
+    </form>
+
+</div>
+
+<script>
+    let currentStep = 0;
+
+    const steps = document.querySelectorAll(".step");
+    const circles = document.querySelectorAll(".circle");
+
+    function showStep() {
+
+        steps.forEach((step, index) => {
+            step.classList.toggle(
+                "active",
+                index === currentStep
+            );
+        });
+
+        circles.forEach((circle, index) => {
+            circle.classList.toggle(
+                "active",
+                index <= currentStep
+            );
+        });
+    }
+
+    function nextStep() {
+
+        if (currentStep < steps.length - 1) {
+            currentStep++;
+            showStep();
+        }
+    }
+
+    function previousStep() {
+
+        if (currentStep > 0) {
+            currentStep--;
+            showStep();
+        }
+    }
+
+    document.getElementById("multiForm")
+        .addEventListener("submit", function(event) {
+
+            event.preventDefault();
+
+            alert("Registration completed successfully!");
+        });
+</script>
+
+</body>
+</html>

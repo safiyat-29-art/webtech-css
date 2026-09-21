@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Float and Clear</title>
+
+    <style>
+        .image {
+            width: 150px;
+            height: 150px;
+            background: lightblue;
+            float: left;
+            margin-right: 20px;
+        }
+
+        .clear {
+            clear: both;
+            background: lightgreen;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="image">
+        Image
+    </div>
+
+    <p>
+        This text flows around the floated element.
+        The float property allows content to wrap
+        around an element.
+    </p>
+
+    <div class="clear">
+        This section uses clear: both.
+    </div>
+
+</body>
+</html>
